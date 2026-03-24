@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Gestão de Produtos</title>
+    <style>
+      :root {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-color: #f4f7f6;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+      }
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+      }
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #004494;
+      }
+      .link-listar {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .link-listar:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Cadastrar Produto</h2>
+
+      <form action="/produto/inserir" method="POST">
+        <div class="form-group">
+          <label for="nome">Nome do Produto:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Ex: Teclado Mecânico"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="preco">Preço (R$):</label>
+          <input
+            type="number"
+            step="0.01"
+            id="preco"
+            name="preco"
+            placeholder="Ex: 250.50"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="quantidade">Quantidade em Estoque:</label>
+          <input
+            type="number"
+            id="quantidade"
+            name="quantidade"
+            placeholder="Ex: 15"
+            required
+          />
+        </div>
+
+        <button type="submit">Salvar no Banco de Dados</button>
+      </form>
+
+      <a href="/produto/listar" class="link-listar">Ver Produtos Cadastrados</a>
+    </div>
+  </body>
+</html>
